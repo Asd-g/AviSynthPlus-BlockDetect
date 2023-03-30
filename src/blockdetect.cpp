@@ -181,7 +181,7 @@ static void AVSC_CC free_blockdetect(AVS_FilterInfo* fi)
 
 static int AVSC_CC set_cache_hints_blockdetect(AVS_FilterInfo* fi, int cachehints, int frame_range)
 {
-    return cachehints == AVS_CACHE_GET_MTMODE ? 3 : 0;
+    return cachehints == AVS_CACHE_GET_MTMODE ? 1 : 0;
 }
 
 static AVS_Value AVSC_CC Create_blockdetect(AVS_ScriptEnvironment* env, AVS_Value args, void* param)
