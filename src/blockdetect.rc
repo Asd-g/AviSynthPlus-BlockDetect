@@ -1,0 +1,26 @@
+#include <winver.h>
+
+1 VERSIONINFO
+FILEVERSION             1,0,0,0
+PRODUCTVERSION        	1,0,0,0
+FILEFLAGSMASK           VS_FFI_FILEFLAGSMASK
+FILETYPE                VFT_DLL
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+        VALUE "Comments",         "Determines blockiness of frames."
+        VALUE "FileDescription",  "BlockDetect for AviSynth+."
+        VALUE "FileVersion",      "1.0.0"
+        VALUE "InternalName",     "BlockDetect"
+        VALUE "OriginalFilename", "BlockDetect.dll"
+        VALUE "ProductName",      "BlockDetect"
+        VALUE "ProductVersion",   "1.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
