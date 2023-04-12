@@ -1,6 +1,6 @@
 ## Description
 
-Determines blockiness of frames.
+Determines blockiness of frames by adding the relevant frame property.
 
 Based on Remco Muijs and Ihor Kirenko: "A no-reference blocking artifact measure for adaptive video processing." 2005 13th European signal processing conference. (http://www.eurasip.org/Proceedings/Eusipco/Eusipco2005/defevent/papers/cr1042.pdf)
 
