@@ -218,10 +218,10 @@ static AVS_Value AVSC_CC Create_blockdetect(AVS_ScriptEnvironment* env, AVS_Valu
     d->period_min = avs_defined(avs_array_elt(args, Period_min)) ? avs_as_int(avs_array_elt(args, Period_min)) : 3;
     d->period_max = avs_defined(avs_array_elt(args, Period_max)) ? avs_as_int(avs_array_elt(args, Period_max)) : 24;
 
-    if (d->period_min <= 0)
-        return set_error("BlockDetect: period_min must be greater than 0.");
-    if (d->period_max <= 0)
-        return set_error("BlockDetect: period_max must be greater than 0.");
+    if (d->period_min < 2 || d->period_min > 32)
+        return set_error("BlockDetect: period_min must be between 2..32.");
+    if (d->period_max < 2 || d->period_max > 64)
+        return set_error("BlockDetect: period_max must be between 2..64.");
 
     const int opt{ avs_defined(avs_array_elt(args, Opt)) ? avs_as_int(avs_array_elt(args, Opt)) : -1 };
     if (opt < -1 || opt > 3)
@@ -345,6 +345,6 @@ static AVS_Value AVSC_CC Create_blockdetect(AVS_ScriptEnvironment* env, AVS_Valu
 
 const char* AVSC_CC avisynth_c_plugin_init(AVS_ScriptEnvironment* env)
 {
-    avs_add_function(env, "BlockDetect", "c[period_min]i[period_max]i[planes]i[opt]i", Create_blockdetect, 0);
+    avs_add_function(env, "BlockDetect", "c[period_min]i[period_max]i[planes]i*[opt]i", Create_blockdetect, 0);
     return "BlockDetect";
 }

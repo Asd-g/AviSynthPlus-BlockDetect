@@ -26,7 +26,8 @@ BlockDetect(clip input, int "period_min", int "period_max", int[] "planes", int 
 
 - period_min, period_max\
     Set minimum and maximum values for determining pixel grids (periods).\
-    Must be greater than  0.\
+    period_min must be between 2..32.\
+    period_max must be between 2..64.\
     Default: period_min = 3, period_max = 24.
 
 - planes\
