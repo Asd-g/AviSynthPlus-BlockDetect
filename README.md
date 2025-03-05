@@ -44,6 +44,12 @@ BlockDetect(clip input, int "period_min", int "period_max", int[] "planes", int 
     3: Use AVX-512 code.\
     Default: -1.
 
+### Example:
+
+Save the values of `blockiness_y` frame property that are greater than 1.8 to file `log.txt`:
+
+`WriteFileIf(last, "log.txt", """propGetFloat(BlockDetect(), "blockiness_y") > 1.8""", "current_frame")`
+
 ### Building:
 
 - Windows\
